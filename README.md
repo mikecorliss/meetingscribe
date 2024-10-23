@@ -4,10 +4,16 @@ MeetingScribe is an AI-driven command-line tool designed to streamline your meet
 
 **Prerequisites**:
 
-1. Specify [OpenAI API Key](https://platform.openai.com/account/api-keys):
+1a. Specify [OpenAI API Key](https://platform.openai.com/account/api-keys):
 
 ```console
 export OPENAI_API_KEY=<your-openai-api-key>
+```
+
+1b. Specify [Your OWN Ollama endpoint](https://www.ollama.com):
+
+```console
+export OPENAI_BASE_URL="https://yourollama.com"
 ```
 
 2. Install [FFmpeg](https://ffmpeg.org/download.html)
@@ -35,8 +41,17 @@ using <code>docker</code>
 ```console
 export OPENAI_API_KEY=<your-openai-api-key>
 
-docker run -it -e OPENAI_API_KEY=$OPENAI_API_KEY ghcr.io/0x77dev/meetingscribe --help
+docker run -it -e OPENAI_API_KEY=$OPENAI_API_KEY mcorliss/meetingscribe:test --help
 ```
+
+1b. Self Hosted LLM
+
+```console
+export OPENAI_BASE_URL="https://yourollama.com"
+
+docker run -it -e OPENAI_BASE_URL=$OPENAI_BASE_URL mcorliss/meetingscribe:test --help
+```
+
 
 </details>
 
